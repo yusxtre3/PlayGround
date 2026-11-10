@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#9bdcf4" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='20' fill='%23fff4d8'/%3E%3Cpath d='M14 34c0-11 8-20 20-20 9 0 16 6 18 14l9 5-9 5c-3 9-10 14-20 14-10 0-18-8-18-18z' fill='%23ffc65e'/%3E%3Ccircle cx='39' cy='28' r='3' fill='%23254d5d'/%3E%3C/svg%3E" />
+  <title>SKYBOUND — A little bird, a big sky</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell" id="gameShell">
+    <canvas id="gameCanvas" aria-label="Skybound game scene"></canvas>
+    <div class="topbar">
+      <a class="brand" href="#" aria-label="Skybound home"><span class="brand-mark">✦</span><span>SKYBOUND<span class="brand-dot">.</span></span></a>
+      <div class="top-actions">
+        <div class="best-pill"><span class="best-icon">♛</span><span>BEST</span><strong id="bestScore">00</strong></div>
+        <button class="icon-button sound-button" id="soundButton" aria-label="Toggle sound" title="Toggle sound"><span id="soundIcon">♫</span></button>
+      </div>
+    </div>
+    <div class="scoreboard" id="scoreboard" aria-live="polite" aria-label="Current score">
+      <span class="score-label">SCORE</span><span class="score-value" id="scoreValue">0</span>
+    </div>
+
+    <section class="intro-card" id="introCard" aria-labelledby="gameTitle">
+      <div class="card-bird" aria-hidden="true"><svg viewBox="0 0 96 76"><ellipse cx="46" cy="42" rx="33" ry="25" fill="#ffc65e"/><path d="M22 49 7 59l7-21z" fill="#f28c57"/><path d="M70 34q21-2 23 5-7 9-24 3z" fill="#f27c58"/><ellipse cx="57" cy="34" rx="8" ry="10" fill="#fffdf1"/><circle cx="59" cy="35" r="4" fill="#254d5d"/><circle cx="60" cy="33" r="1.5" fill="white"/><ellipse cx="43" cy="51" rx="11" ry="6" fill="#f49a50" transform="rotate(-20 43 51)"/><path d="M17 33q8-22 32-19" fill="none" stroke="#fff1c3" stroke-width="3" stroke-linecap="round"/></svg><span>✦</span></div>
+      <div class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT LITTLE ADVENTURE <span class="eyebrow-line"></span></div>
+      <div class="title-wrap"><h1 id="gameTitle">A little bird.<br><em>A big sky.</em></h1><span class="title-sparkle">✦</span></div>
+      <p class="intro-copy">One tap at a time. How far can you fly?</p>
+      <button class="primary-button" id="playButton"><span>LET'S FLY</span><span class="button-arrow">↗</span></button>
+      <div class="how-to"><span class="tap-icon"><i></i><i></i></span><span><strong>TAP</strong> or <strong>SPACE</strong> to flap</span></div>
+      <div class="card-scribble" aria-hidden="true">﹏</div>
+    </section>
+
+    <section class="result-card hidden" id="resultCard" aria-live="polite">
+      <div class="result-medal" id="resultMedal">✦</div>
+      <div class="eyebrow">A LOVELY LITTLE FLIGHT</div>
+      <h2 id="resultTitle">Nice try!</h2>
+      <p class="result-copy" id="resultCopy">The sky is still yours.</p>
+      <div class="result-stats"><div><span>FLIGHT SCORE</span><strong id="finalScore">0</strong></div><i></i><div><span>PERSONAL BEST</span><strong id="finalBest">0</strong></div></div>
+      <button class="primary-button" id="againButton"><span>FLY AGAIN</span><span class="button-arrow">↻</span></button>
+      <div class="share-hint">Every flight is a fresh start.</div>
+    </section>
+
+    <button class="pause-button hidden" id="pauseButton" aria-label="Pause game"><span class="pause-glyph">Ⅱ</span></button>
+    <section class="pause-card hidden" id="pauseCard" aria-live="polite">
+      <div class="pause-orbit">Ⅱ</div><div class="eyebrow">TAKE YOUR TIME</div><h2>Flight paused</h2>
+      <button class="primary-button" id="resumeButton"><span>BACK TO SKY</span><span class="button-arrow">↗</span></button>
+    </section>
+
+    <div class="bottom-note" id="bottomNote"><span class="note-star">✦</span> A tiny adventure for your pocket <span class="note-star">✦</span></div>
+    <div class="game-hint hidden" id="gameHint"><span class="hint-tap">↑</span><span>Tap anywhere to flap</span></div>
+    <div class="toast hidden" id="toast">NEW PERSONAL BEST!</div>
+    <div class="vignette" aria-hidden="true"></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
