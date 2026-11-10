@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#101a2d" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ff754e'/%3E%3Ctext x='16' y='23' font-size='22' text-anchor='middle' fill='white'%3EF%3C/text%3E%3C/svg%3E" />
+  <title>Fort Friends — Build &amp; Bonk</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="game" aria-label="Fort Friends game board"></canvas>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Fort Friends home">
+        <span class="brand-mark">F</span>
+        <span class="brand-name">FORT<span>FRIENDS</span></span>
+      </a>
+      <div class="round-pill"><span class="live-dot"></span><span id="round-label">YOUR TURN</span></div>
+      <button class="icon-btn" id="sound-btn" aria-label="Toggle sound" title="Toggle sound">♫</button>
+    </header>
+    <section class="mission-card" aria-live="polite">
+      <div class="mission-icon" id="mission-icon">🛠️</div>
+      <div class="mission-copy"><div class="eyebrow" id="phase-eyebrow">BUILDER PHASE</div><h1 id="mission-title">Build your fort</h1><p id="mission-hint">Stack a clever defense. Your friend is ready to launch!</p></div>
+    </section>
+    <div class="score-chip"><span class="star">★</span><span id="score">0</span><span class="score-caption">BLOCKS HIT</span></div>
+    <div class="toast" id="toast" role="status"></div>
+    <section class="build-panel" id="build-panel">
+      <div class="panel-top"><div><span class="panel-title">YOUR BUILD KIT</span><span class="panel-sub">Tap a piece, then place it on the field</span></div><button class="text-btn" id="undo-btn">↶ <span>Undo</span></button></div>
+      <div class="piece-list" id="piece-list"></div>
+      <div class="panel-bottom"><span class="tip"><kbd>R</kbd> rotate <i>·</i> tap a piece to remove it</span><button class="primary-btn" id="attack-btn">LET'S ATTACK <span>→</span></button></div>
+    </section>
+    <section class="attack-panel hidden" id="attack-panel">
+      <div class="ammo-wrap"><div class="ammo-label">YOUR AMMO <span id="ammo-count">3 LEFT</span></div><div class="ammo-birds" id="ammo-birds"></div></div>
+      <div class="attack-tip"><span class="aim-icon">↖</span><span><b>Pull back &amp; release</b><small>Drag the bird to aim your shot</small></span></div>
+      <button class="secondary-btn" id="rebuild-btn">↺ <span>REBUILD</span></button>
+    </section>
+    <div class="result-modal hidden" id="result-modal"><div class="result-card"><div class="result-emoji" id="result-emoji">🎉</div><div class="eyebrow" id="result-eyebrow">NICE SHOT</div><h2 id="result-title">Fort demolished!</h2><p id="result-copy">Your friend won't forget that one.</p><button class="primary-btn" id="again-btn">PLAY AGAIN <span>↻</span></button></div></div>
+    <div class="mobile-hint" id="mobile-hint">Drag the bird back to aim · Tap pieces to build</div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
